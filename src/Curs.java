@@ -17,4 +17,24 @@ public class Curs  implements Avaluable{
 
     }
 
+    public boolean matricular(Alumne alumne){
+        if(!validarAlumne(alumne)){
+            return false;
+        }
+        alumnes.put(alumne.getDni(),alumne);
+        ServeiNotificacions.enviarConfirmacio(alumne,this.nom);
+        return true;
+    }
+    @Override
+    public double calcularNotaFinal(){
+        return 0; //No hay variables referentes a notas
+    }
+
+    private boolean validarAlumne(Alumne alumne){
+        if (alumne==null) return false;
+        if(this.alumnes.containsKey((alumne.getDni()))) return false;
+        return this.nivell != Nivell.AVANÇAT || alumne.getEdat() >= 16;
+
+
+    }
 }
