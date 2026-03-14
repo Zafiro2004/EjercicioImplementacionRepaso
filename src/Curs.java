@@ -3,7 +3,7 @@ import java.util.Map;
 
 public class Curs  implements Avaluable{
     private final String codi;
-    private String nom;
+    private  String nom;
     private Nivell nivell;
 
     private final Map<String,Alumne> alumnes;
