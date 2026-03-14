@@ -28,7 +28,7 @@ public class Academia {
     }
     public boolean afegirGuitarra(String codi,String nom, double preuLloguer,String tipusCordes){
         if(!validarInstrument(codi,nom,preuLloguer)) return false;
-        if(tipusCordes == null | tipusCordes.isEmpty()) return false;
+        if(tipusCordes == null || tipusCordes.isEmpty()) return false;
 
         Guitarra g = new Guitarra(codi, nom, preuLloguer, tipusCordes);
         return this.instruments.add(g);
