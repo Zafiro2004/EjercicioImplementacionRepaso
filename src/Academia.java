@@ -41,4 +41,14 @@ public class Academia {
         this.professors.remove(dni);
         return true;
     }
+    private boolean validarInstrument(String codi,String nom, double preuLloguer){
+        if(codi==null || codi.isEmpty() || nom == null || nom.isEmpty()) return false;
+        if (preuLloguer<=0) return false;
+        for(Instrument i : this.instruments){
+            if(i.getCodi().equals(codi)){
+                return false;
+            }
+        }
+        return true;
+    }
 }
