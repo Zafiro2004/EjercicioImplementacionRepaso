@@ -37,4 +37,8 @@ public class Curs  implements Avaluable{
 
 
     }
+
+    public String getCodi() {
+        return codi;
+    }
 }
