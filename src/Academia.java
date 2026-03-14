@@ -18,8 +18,6 @@ public class Academia {
         this.instruments= new ArrayList<>();
         this.professors= new HashMap<>();
     }
-    //TODO
-    //Añadir métodos para añadir los diferentes tipos de instrumentos,cursos y profesores
     public boolean afegirPiano(String codi, String nom, double preuLloguer, int numTecles, boolean esElectronic){
         if(!validarInstrument(codi,nom,preuLloguer)) return false;
         if(numTecles<=0) return false;
