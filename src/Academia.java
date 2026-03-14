@@ -34,7 +34,7 @@ public class Academia {
         return this.instruments.add(g);
     }
     public boolean afegirCurs(String codi, String nom, Nivell nivell){
-        if(!validarCurs(codi,nom)) return false;
+        if(!validarCurs(codi,nom,nivell)) return false;
 
         Curs c = new Curs(codi,nom,nivell);
         return this.cursos.add(c);
