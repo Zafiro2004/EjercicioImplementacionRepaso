@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class Curs {
+public class Curs  implements Avaluable{
     private final String codi;
     private String nom;
     private Nivell nivell;
