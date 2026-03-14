@@ -8,4 +8,8 @@ public class Profesor {
         this.dni = dni;
         this.especialitat = especialitat;
     }
+
+    public String getDni() {
+        return dni;
+    }
 }
