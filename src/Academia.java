@@ -20,6 +20,14 @@ public class Academia {
     }
     //TODO
     //Añadir métodos para añadir los diferentes tipos de instrumentos,cursos y profesores
+    public boolean afegirPiano(String codi, String nom, double preuLloguer, int numTecles, boolean esElectronic){
+        if(!validarInstrument(codi,nom,preuLloguer)) return false;
+        if(numTecles<=0) return false;
+
+        Piano p = new Piano(codi, nom, preuLloguer, numTecles, esElectronic);
+        return this.instruments.add(p);
+
+    }
 
     public Instrument getInstrument(int posicio){
         if(posicio<0 || posicio>=instruments.size()) return null;
