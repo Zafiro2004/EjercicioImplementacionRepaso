@@ -28,6 +28,13 @@ public class Academia {
         return this.instruments.add(p);
 
     }
+    public boolean afegirGuitarra(String codi,String nom, double preuLloguer,String tipusCordes){
+        if(!validarInstrument(codi,nom,preuLloguer)) return false;
+        if(tipusCordes == null | tipusCordes.isEmpty()) return false;
+
+        Guitarra g = new Guitarra(codi, nom, preuLloguer, tipusCordes);
+        return this.instruments.add(g);
+    }
 
     public Instrument getInstrument(int posicio){
         if(posicio<0 || posicio>=instruments.size()) return null;
