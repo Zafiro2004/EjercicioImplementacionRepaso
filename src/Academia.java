@@ -35,6 +35,12 @@ public class Academia {
         Guitarra g = new Guitarra(codi, nom, preuLloguer, tipusCordes);
         return this.instruments.add(g);
     }
+    public boolean afegirCurs(String codi, String nom, Nivell nivell){
+        if(!validarCurs(codi,nom)) return false;
+
+        Curs c = new Curs(codi,nom,nivell);
+        return this.cursos.add(c);
+    }
 
     public Instrument getInstrument(int posicio){
         if(posicio<0 || posicio>=instruments.size()) return null;
