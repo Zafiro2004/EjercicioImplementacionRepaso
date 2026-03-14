@@ -1,7 +1,46 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
+public class Main {
+    private static int ok = 0, ko = 0;
 
+    public static void main(String[] args) {
+        System.out.println("=== Proves UML -> codi (consola) ===");
+
+        provarAcademiaAfegirPiano();
+        provarAcademiaAfegirGuitarra();
+        provarAcademiaAfegirCurs();
+        provarAcademiaAfegirProfesor();
+        provarAcademiaGetInstrument();
+        provarAcademiaGetProfesorIEliminar();
+        provarAlumne();
+        provarProfesor();
+        provarCursMatricular();
+        provarCursCalcularNotaFinal();
+
+        System.out.println("\n=== RESULTAT ===");
+        System.out.println("PASS: " + ok);
+        System.out.println("FAIL: " + ko);
+    }
+
+
+
+    private static void provarAcademiaAfegirPiano() {
+        System.out.println("\n--- Tests Academia.afegirPiano ---");
+        Academia a = new Academia("A1", "Academia Prova");
+
+        check(a.afegirPiano("P1", "Yamaha", 25.0, 88, true), "Afegir piano válido");
+        check(!a.afegirPiano(null, "Yamaha2", 20.0, 88, false), "No permite codi null");
+        check(!a.afegirPiano("", "Yamaha2", 20.0, 88, false), "No permite codi vacío");
+        check(!a.afegirPiano("P2", null, 20.0, 88, false), "No permite nom null");
+        check(!a.afegirPiano("P2", "", 20.0, 88, false), "No permite nom vacío");
+        check(!a.afegirPiano("P2", "Casio", 0.0, 88, false), "No permite preuLloguer = 0");
+        check(!a.afegirPiano("P2", "Casio", -5.0, 88, false), "No permite preuLloguer negativo");
+        check(!a.afegirPiano("P2", "Casio", 20.0, 0, false), "No permite numTecles = 0");
+        check(!a.afegirPiano("P2", "Casio", 20.0, -1, false), "No permite numTecles negativo");
+        check(!a.afegirPiano("P1", "Duplicat", 20.0, 61, false), "No permite codi de instrumento duplicado");
+    }
+
+    private static void provarAcademiaAfegirGuitarra() {
+        System.out.println("\n--- Tests Academia.afegirGuitarra ---");
+        Academia a = new Academia("A1", "Academia Prova");
 
         check(a.afegirGuitarra("G1", "Fender", 18.0, "niló"), "Afegir guitarra válida");
         check(!a.afegirGuitarra(null, "Gibson", 18.0, "acer"), "No permite codi null");
