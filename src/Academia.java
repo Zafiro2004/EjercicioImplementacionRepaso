@@ -72,4 +72,13 @@ public class Academia {
         }
         return true;
     }
+    private boolean validarCurs(String codi,String nom){
+        if(codi==null || codi.isEmpty() || nom == null || nom.isEmpty()) return false;
+        for(Curs c : this.cursos){
+            if(c.getCodi().equals(codi)){
+                return false;
+            }
+        }
+        return true;
+    }
 }
