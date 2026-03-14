@@ -18,8 +18,6 @@ public class Academia {
         this.instruments= new ArrayList<>();
         this.professors= new HashMap<>();
     }
-    //TODO
-    //Añadir métodos para añadir los diferentes tipos de instrumentos,cursos y profesores
     public boolean afegirPiano(String codi, String nom, double preuLloguer, int numTecles, boolean esElectronic){
         if(!validarInstrument(codi,nom,preuLloguer)) return false;
         if(numTecles<=0) return false;
@@ -30,10 +28,24 @@ public class Academia {
     }
     public boolean afegirGuitarra(String codi,String nom, double preuLloguer,String tipusCordes){
         if(!validarInstrument(codi,nom,preuLloguer)) return false;
-        if(tipusCordes == null | tipusCordes.isEmpty()) return false;
+        if(tipusCordes == null || tipusCordes.isEmpty()) return false;
 
         Guitarra g = new Guitarra(codi, nom, preuLloguer, tipusCordes);
         return this.instruments.add(g);
+    }
+    public boolean afegirCurs(String codi, String nom, Nivell nivell){
+        if(!validarCurs(codi,nom,nivell)) return false;
+
+        Curs c = new Curs(codi,nom,nivell);
+        return this.cursos.add(c);
+    }
+
+    public boolean afegirProfesor(String nom,String dni,String especialitat){
+        if(!validarProfesor(nom, dni, especialitat)) return false;
+
+        Profesor p = new Profesor(nom, dni, especialitat);
+        professors.put(dni,p);
+        return true;
     }
 
     public Instrument getInstrument(int posicio){
@@ -64,6 +76,20 @@ public class Academia {
                 return false;
             }
         }
+        return true;
+    }
+    private boolean validarCurs(String codi,String nom,Nivell nivell){
+        if(codi==null || codi.isEmpty() || nom == null || nom.isEmpty() || nivell == null) return false;
+        for(Curs c : this.cursos){
+            if(c.getCodi().equals(codi)){
+                return false;
+            }
+        }
+        return true;
+    }
+    private boolean validarProfesor(String nom,String dni,String especialitat){
+        if(nom == null || nom.isEmpty() || dni == null || dni.isEmpty() || especialitat==null || especialitat.isEmpty()) return false;
+        if(this.professors.containsKey(dni)) return false;
         return true;
     }
 }
