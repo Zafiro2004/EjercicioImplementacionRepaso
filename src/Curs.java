@@ -13,6 +13,7 @@ public class Curs  implements Avaluable{
         this.codi=codi;
         this.nom=nom;
         this.alumnes= new HashMap<>();
+        this.nivell=nivell;
 
     }
 
