@@ -18,4 +18,27 @@ public class Academia {
         this.instruments= new ArrayList<>();
         this.professors= new HashMap<>();
     }
+    //TODO
+    //Añadir métodos para añadir los diferentes tipos de instrumentos,cursos y profesores
+
+    public Instrument getInstrument(int posicio){
+        if(posicio<0 || posicio>=instruments.size()) return null;
+        return instruments.get(posicio);
+    }
+    public Profesor getProfesor(String dni){
+        if(!this.professors.containsKey(dni)){
+            System.out.printf("No se ha encontrado al  profesor con el dni %s",dni);
+            return null;
+        }
+        return this.professors.get(dni);
+
+    }
+    public boolean eliminarProfessor(String dni){
+        if(!this.professors.containsKey(dni)){
+            System.out.printf("No se ha encontrado al  profesor con el dni %s",dni);
+            return false;
+        }
+        this.professors.remove(dni);
+        return true;
+    }
 }
