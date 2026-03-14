@@ -42,6 +42,14 @@ public class Academia {
         return this.cursos.add(c);
     }
 
+    public boolean afegirProfesor(String nom,String dni,String especialitat){
+        if(!validarProfesor(nom, dni, especialitat)) return false;
+
+        Profesor p = new Profesor(nom, dni, especialitat);
+        professors.put(dni,p);
+        return true;
+    }
+
     public Instrument getInstrument(int posicio){
         if(posicio<0 || posicio>=instruments.size()) return null;
         return instruments.get(posicio);
