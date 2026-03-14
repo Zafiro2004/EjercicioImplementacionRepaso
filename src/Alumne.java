@@ -16,4 +16,8 @@ public class Alumne {
     public String getDni() {
         return dni;
     }
+
+    public int getEdat() {
+        return edat;
+    }
 }
