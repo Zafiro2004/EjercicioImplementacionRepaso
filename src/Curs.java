@@ -7,8 +7,7 @@ public class Curs  implements Avaluable{
     private Nivell nivell;
 
     private final Map<String,Alumne> alumnes;
-    private ServeiNotificacions serveiNotificacions; //Se podría implementar directamente en el método pero bueno
-    //Aquí faltarían los instrumentos y el profesor si los quisieramos para algo
+
 
     public Curs(String codi,String nom,Nivell nivell){
         this.codi=codi;
