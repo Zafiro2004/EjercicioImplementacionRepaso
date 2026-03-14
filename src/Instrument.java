@@ -10,4 +10,8 @@ public abstract class Instrument {
     }
 
     public abstract void descriure();
+
+    public String getCodi() {
+        return codi;
+    }
 }
