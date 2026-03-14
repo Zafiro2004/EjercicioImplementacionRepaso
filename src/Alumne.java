@@ -8,4 +8,8 @@ public class Alumne {
         this.dni = dni;
         this.edat = edat;
     }
+
+    public String getNom() {
+        return nom;
+    }
 }
