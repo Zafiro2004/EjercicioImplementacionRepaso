@@ -65,7 +65,7 @@ public class Main {
         check(!a.afegirCurs("C2", "", Nivell.INTERMEDI), "No permite nom vacío");
         check(!a.afegirCurs("C1", "Curs duplicat", Nivell.AVANÇAT), "No permite codi de curs duplicado");
 
-        check(a.afegirCurs("C3", "Curs nivell null", null), "Actualmente permite nivell null");
+        check(!a.afegirCurs("C3", "Curs nivell null", null), "Actualmente  no permite nivell null");
     }
 
     private static void provarAcademiaAfegirProfesor() {
@@ -151,7 +151,7 @@ public class Main {
 
         Curs cursAmbNivellNull = new Curs("C4", "Sense nivell", null);
         Alumne alumne3 = new Alumne("Oriol", "A5", 14);
-        check(cursAmbNivellNull.matricular(alumne3), "Actualmente permite matricular si nivell es null");
+        check(cursAmbNivellNull.matricular(alumne3), "Actualmente no permite matricular si nivell es null");
     }
 
     private static void provarCursCalcularNotaFinal() {
