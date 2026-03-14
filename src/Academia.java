@@ -78,8 +78,8 @@ public class Academia {
         }
         return true;
     }
-    private boolean validarCurs(String codi,String nom){
-        if(codi==null || codi.isEmpty() || nom == null || nom.isEmpty()) return false;
+    private boolean validarCurs(String codi,String nom,Nivell nivell){
+        if(codi==null || codi.isEmpty() || nom == null || nom.isEmpty() || nivell == null) return false;
         for(Curs c : this.cursos){
             if(c.getCodi().equals(codi)){
                 return false;
