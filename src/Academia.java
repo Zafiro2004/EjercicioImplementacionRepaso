@@ -89,4 +89,9 @@ public class Academia {
         }
         return true;
     }
+    private boolean validarProfesor(String nom,String dni,String especialitat){
+        if(nom == null || nom.isEmpty() || dni == null || dni.isEmpty() || especialitat==null || especialitat.isEmpty()) return false;
+        if(this.professors.containsKey(dni)) return false;
+        return true;
+    }
 }
