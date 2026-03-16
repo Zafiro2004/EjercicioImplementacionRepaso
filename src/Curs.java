@@ -7,6 +7,7 @@ public class Curs  implements Avaluable{
     private Nivell nivell;
 
     private final Map<String,Alumne> alumnes;
+    private Instrument instrument;
 
 
     public Curs(String codi,String nom,Nivell nivell){
