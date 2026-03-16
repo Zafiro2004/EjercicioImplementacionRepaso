@@ -10,11 +10,12 @@ public class Curs  implements Avaluable{
     private Instrument instrument;
 
 
-    public Curs(String codi,String nom,Nivell nivell){
+    public Curs(String codi,String nom,Nivell nivell, Instrument instrument){
         this.codi=codi;
         this.nom=nom;
         this.alumnes= new HashMap<>();
         this.nivell=nivell;
+        this.instrument = instrument;
 
     }
 
