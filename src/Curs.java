@@ -28,6 +28,7 @@ public class Curs  implements Avaluable{
         return true;
     }
     @Override
+    public boolean calcularNotaFinal(){ return 0.0}
    
 
     private boolean validarAlumne(Alumne alumne){
