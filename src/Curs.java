@@ -28,9 +28,7 @@ public class Curs  implements Avaluable{
         return true;
     }
     @Override
-    public double calcularNotaFinal(){
-        return 0; //No hay variables referentes a notas
-    }
+   
 
     private boolean validarAlumne(Alumne alumne){
         if (alumne==null) return false;
