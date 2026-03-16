@@ -34,7 +34,7 @@ public class Curs  implements Avaluable{
     private boolean validarAlumne(Alumne alumne){
         if (alumne==null) return false;
         if(this.alumnes.containsKey((alumne.getDni()))) return false;
-        return this.nivell != Nivell.AVANÇAT || alumne.getEdat() >= 16;
+        return this.nivell != Nivell.AVANÇAT && alumne.getEdat() >= 16;
 
 
     }
